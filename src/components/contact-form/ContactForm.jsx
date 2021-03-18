@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createContact } from '../../redux/contacts/contacts-actions';
-import { v4 as uuidv4 } from 'uuid';
+import { nanoid } from '@reduxjs/toolkit';
+// import { v4 as uuidv4 } from 'uuid';
 import styles from './ContactForm.module.css';
 
 class ContactForm extends Component {
@@ -25,7 +26,7 @@ class ContactForm extends Component {
 
     if (entryCheck) {
       alert(
-        `This '${entryCheck.name}' or '${entryCheck.number}' already exists`,
+        `Either '${entryCheck.name}' or '${entryCheck.number}' already exists`,
       );
       // this.resetForm();
     } else if (name.length === 0 || number.length === 0) {
@@ -33,7 +34,8 @@ class ContactForm extends Component {
       // this.resetForm();
     } else {
       const contactNew = {
-        id: uuidv4(),
+        // id: uuidv4(),
+        id: nanoid(),
         name,
         number,
       };
@@ -83,7 +85,7 @@ class ContactForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  contacts: state.contacts,
+  contacts: state.contacts.items,
 });
 
 const mapDispatchToProps = {

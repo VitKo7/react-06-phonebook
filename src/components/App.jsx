@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { v4 as uuidv4 } from 'uuid';
 import ContactForm from './contact-form/ContactForm';
 import ContactList from './contact-list/ContactList';
 import Filter from './filter/Filter';

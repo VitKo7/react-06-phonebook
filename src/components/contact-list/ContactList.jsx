@@ -28,10 +28,10 @@ ContactList.propTypes = {
 };
 
 const getFilteredContacts = state => {
-  const { filter, contacts } = state;
+  const { filter, items } = state.contacts;
   // const { contacts } = this.state;
-  return contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase()),
+  return items.filter(item =>
+    item.name.toLowerCase().includes(filter.toLowerCase()),
   );
 };
 

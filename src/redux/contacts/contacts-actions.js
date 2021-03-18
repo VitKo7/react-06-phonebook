@@ -1,14 +1,16 @@
+import types from './contacts-types';
+
 export const handleInput = item => ({
-  type: 'contacts/handleInput',
+  type: types.INPUT,
   payload: item,
 });
 
 export const createContact = contact => ({
-  type: 'contacts/createContact',
+  type: types.CREATE,
   payload: contact,
 });
 
 export const handleRemove = id => ({
-  type: 'contacts/handleRemove',
+  type: types.REMOVE,
   payload: id,
 });
